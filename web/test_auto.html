@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.css" rel="stylesheet">
+    <link href="css/dialog-style.css" rel="stylesheet">
+<link href="css/zebra_dialog.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Project Owner</label>
+            <div class="col-sm-8">
+                <input id="ownerTxt" class="form-control" type="text">
+                <input id="ownerTxtHidden" type="hidden">
+            </div>
+          </div>
+        
+        <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/jquery/dist/jquery-ui-1.9.1.js"></script>
+    <script src="vendors/jquery/dist/jquery.autocomplete.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/zebra_dialog.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>    
+    <!-- Chart.js -->
+    <script src="vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- jQuery Sparklines -->
+    <script src="vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- easy-pie-chart -->
+    <script src="vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- ECharts -->
+    <script src="vendors/echarts/dist/echarts.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="build/js/custom.js"></script>
+        <script type="text/javascript">
+           $(document).ready(function() {
+        alert("test1");
+        $('#ownerTxt').devbridgeAutocomplete({
+            minChars: 2,
+            serviceUrl: 'tmt/projects/search',
+            preventBadQueries: false,
+            zIndex:2147483647,
+            type: 'POST',
+            showNoSuggestionNotice: true,
+            noSuggestionNotice: 'No Matching Names - Please use ask admistrator to add user"',
+            success : function(data) {
+                var out = $.parseJSON(data);
+                response($.each(out, function(i, item) {
+
+                   return {
+
+                       label: item.value,
+                       value: item.data
+                   };
+               }));
+            },
+            onSelect: function (suggestion) {
+                //alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+                //$('#addToPortfolioActionBtn').prop('disabled', false);
+                //selectedPortfolio = suggestion.data.portfolio_id;
+                
+            }
+        });
+    });
+        
+        </script>
+    </body>
+</html>
