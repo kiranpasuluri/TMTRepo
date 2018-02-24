@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://salesworx:8080/docuface/DocuShare/DocuShare?WSDL" uri="src/conf/xml-resources/web-service-references/DocuShare/wsdl/salesworx_8080/docuface/DocuShare/DocuShare.wsdl"/>
+    <system systemId="http://salesworx:8080/ejb/EnquiryBean?WSDL" uri="src/conf/xml-resources/web-service-references/EnquiryBean/wsdl/salesworx_8080/ejb/EnquiryBean.wsdl"/>
+    <system systemId="http://trudonchweb1:8080/ContentApplicationPlatform/CapService?WSDL" uri="src/conf/xml-resources/web-service-references/CapService/wsdl/trudonchweb1_8080/ContentApplicationPlatform/CapService.wsdl"/>
+    <system systemId="http://trudontlkypdev:8050/CommsframeworkWebService.asmx?wsdl" uri="src/conf/xml-resources/web-service-references/CommsframeworkWebService/wsdl/trudontlkypdev_8050/CommsframeworkWebService.asmx.wsdl"/>
+    <system systemId="file:/C:/Users/MaremaM/Documents/TMT/src/conf/xml-resources/web-service-references/CommsframeworkWebService/wsdl/trudontlkypdev_8050/CommsframeworkWebService.asmx.wsdl" uri="src/conf/xml-resources/web-service-references/CommsframeworkWebService.asmx/wsdl/CommsframeworkWebService.asmx.wsdl"/>
+</catalog>
